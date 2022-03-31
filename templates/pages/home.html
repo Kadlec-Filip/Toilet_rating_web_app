@@ -1,0 +1,60 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+<style>
+    .card-header{
+        background-color: #ee6f57;
+    }
+    #mainPageJumotron{
+        background-color:  #f6f5f5;
+        max-height: 120px;
+        font-family: "Century Gothic";
+    }
+    #customButton{
+        background-color: #145374;
+    }
+</style>
+
+
+<div class="jumbotron text-center pt-5" id="mainPageJumotron">
+  <h1>Hello, fella!</h1>
+  <p class="lead"> We care about your poop, do you?</p>
+</div>
+
+<div class="container pt-5">
+    <div class="row">
+
+        <div class="col-md-5">
+            <div class="col-md">
+                <div class="card text-center bg-light  mb-3" style="max-width: 25rem" id="bestToilets">
+                    <div class="card-header">
+                        <h5 class="card-title">All time favourites</h5>
+                    </div>
+                    <div class="card-body">
+                        {% include 'pages/best_toilets.html' %}
+                        <a href="#">To ladder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="col-md">
+                <div class="card text-center bg-light  mb-3" style="max-width: 20rem" id="worstToilets">
+                    <div class="card-header">
+                        <h5 class="card-title">All time worst</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">seznam par nejhorsich hajzlyku ever</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="col-md">
+                <a href={% url 'create_toilet' %} type="button" class="btn btn-lg text-white" id="customButton">Help us find new toilet!</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
